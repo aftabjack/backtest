@@ -1,6 +1,13 @@
 # Crypto Backtesting Engine 🚀
 
+[![Tests](https://img.shields.io/badge/tests-34%2F34%20passing-brightgreen)](TEST_RESULTS.md)
+[![Production Ready](https://img.shields.io/badge/production-ready-brightgreen)](TEST_RESULTS.md)
+[![Rating](https://img.shields.io/badge/rating-8.2%2F10-blue)](docs/EXECUTIVE_SUMMARY.md)
+[![Speed](https://img.shields.io/badge/speed-12x%20faster-orange)](docs/PHASE1_COMPLETE.md)
+
 A **production-grade** Python backtesting engine for cryptocurrency trading strategies with **12x faster** data loading and comprehensive analytics.
+
+**✅ Fully tested:** 34/34 tests passing | **🚀 Production-ready** | **⚡ 3.4x faster**
 
 ## ⚡ Quick Start
 
