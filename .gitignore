@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+*.egg-info/
+
+# Data files (large)
+csv_data/*.csv
+parquet_data/*.parquet
+
+# Keep directory structure
+!csv_data/.gitkeep
+!parquet_data/.gitkeep
+
+# Logs
+logs/*.log
+!logs/.gitkeep
+
+# Output
+output/
+*.png
+*.jpg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+.cache/

@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backtest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crypto_backtest
+    volumes:
+      # Mount data directory
+      - ./csv_data:/app/csv_data:ro
+      # Mount output directory
+      - ./output:/app/output
+      # Mount source code for development
+      - ./strategies:/app/strategies
+      - ./examples:/app/examples
+      - ./engine:/app/engine
+      - ./data_handlers:/app/data_handlers
+      - ./analytics:/app/analytics
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MPLBACKEND=Agg
+    stdin_open: true
+    tty: true
+    command: python main.py
+
+  # Jupyter notebook service (optional)
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crypto_backtest_jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./csv_data:/app/csv_data:ro
+      - ./output:/app/output
+      - ./notebooks:/app/notebooks
+      - ./strategies:/app/strategies
+      - ./examples:/app/examples
+      - ./engine:/app/engine
+      - ./data_handlers:/app/data_handlers
+      - ./analytics:/app/analytics
+    environment:
+      - PYTHONUNBUFFERED=1
+      - JUPYTER_ENABLE_LAB=yes
+    command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=''
